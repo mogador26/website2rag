@@ -1,0 +1,13 @@
+beautifulsoup4
+markdownify
+pymupdf4llm<2
+chromadb
+sentence-transformers
+rank-bm25
+openpyxl
+Pillow
+python-dotenv
+
+# Fournisseur de LLM (au choix, selon LLM_PROVIDER) :
+openai          # OpenAI et tout serveur compatible (Ollama, LM Studio, vLLM, Mistral, Groq, OpenRouter...)
+# anthropic     # décommenter si LLM_PROVIDER=anthropic

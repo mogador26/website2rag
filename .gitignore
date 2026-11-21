@@ -1,0 +1,7 @@
+.env
+db/
+venv/
+.venv/
+_site/
+__pycache__/
+evaluation_resultats.xlsx

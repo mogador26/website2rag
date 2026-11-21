@@ -1,0 +1,21 @@
+services:
+  rag:
+    build:
+      context: .
+      args:
+        UID: 1000          # votre UID (commande `id -u`) pour éviter les soucis de droits
+        GID: 1000
+        # EXTRA_PIP: anthropic    # si LLM_PROVIDER=anthropic
+        # PRELOAD_MODEL: 1        # embarque le modèle d'embeddings dans l'image
+    image: rag-site-statique
+    env_file: .env                # LLM_PROVIDER, LLM_MODEL, LLM_API_KEY, LLM_BASE_URL...
+    volumes:
+      - ./public:/site:ro         # site construit (HTML + PDF + images), en lecture seule
+      - rag_data:/data            # index Chroma + cache des modèles Hugging Face
+    extra_hosts:
+      - "host.docker.internal:host-gateway"   # pour joindre Ollama sur la machine hôte (Linux)
+    stdin_open: true
+    tty: true
+
+volumes:
+  rag_data:
