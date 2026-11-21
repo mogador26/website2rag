@@ -1,6 +1,6 @@
-# RAG pour site Jekyll statique (HTML + PDF + images)
+# RAG pour site web statique {HTML,PDF,images}
 
-Indexe le site construit (dossier `public/`), puis répond aux questions en français
+Indexe le site construit (ex: dossier `public/`), puis répond aux questions en français
 avec citations des pages et des PDF (`#page=N`).
 
 ## Installation
